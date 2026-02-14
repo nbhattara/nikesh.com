@@ -11,8 +11,58 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
+  const themeToggle = document.querySelector("#theme-toggle");
+  const prefersDark = window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches;
+  const storedTheme = localStorage.getItem("theme");
+
+  const applyTheme = (theme) => {
+    const isDark = theme === "dark";
+    document.body.classList.toggle("theme-dark", isDark);
+
+    if (themeToggle) {
+      themeToggle.setAttribute("aria-label", isDark ? "Switch to light mode" : "Switch to dark mode");
+    }
+  };
+
+  const initialTheme = storedTheme ? storedTheme : prefersDark ? "dark" : "light";
+  applyTheme(initialTheme);
+
+  if (themeToggle) {
+    themeToggle.addEventListener("click", () => {
+      const nextTheme = document.body.classList.contains("theme-dark") ? "light" : "dark";
+      localStorage.setItem("theme", nextTheme);
+      applyTheme(nextTheme);
+    });
+  }
+
   form();
   skillbar();
+
+  const circles = document.querySelectorAll(".skills-premium .circle");
+  if (circles.length) {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            const percent = Number(entry.target.getAttribute("data-percent"));
+            const progress = entry.target.querySelector(".progress");
+            if (progress && Number.isFinite(percent)) {
+              const radius = 50;
+              const circumference = 2 * Math.PI * radius;
+              const offset = circumference - (circumference * percent) / 100;
+              progress.style.strokeDasharray = String(circumference);
+              progress.style.strokeDashoffset = String(offset);
+            }
+
+            observer.unobserve(entry.target);
+          }
+        });
+      },
+      { threshold: 0.5 }
+    );
+
+    circles.forEach((circle) => observer.observe(circle));
+  }
 
   const nav = document.querySelector("#nav");
   const navBtn = document.querySelector("#nav-btn");
@@ -22,9 +72,9 @@ document.addEventListener("DOMContentLoaded", () => {
   // Hamburger menu
   navBtn.onclick = () => {
     if (nav.classList.toggle("open")) {
-      navBtnImg.src = "img/icons/close.svg";
+      navBtnImg.src = "/img/icons/close.svg";
     } else {
-      navBtnImg.src = "img/icons/open.svg";
+      navBtnImg.src = "/img/icons/open.svg";
     }
   };
 
@@ -55,9 +105,10 @@ document.addEventListener("DOMContentLoaded", () => {
       if (top >= offset && top < offset + height) {
         navLinks.forEach((links) => {
           links.classList.remove("active");
-          document
-            .querySelector("header nav a[href*=" + id + "]")
-            .classList.add("active");
+          const activeLink = document.querySelector("header nav a[href*=" + id + "]");
+          if (activeLink) {
+            activeLink.classList.add("active");
+          }
         });
       }
     });

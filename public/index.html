@@ -3,16 +3,22 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>N Bhattarai – Nikesh Bhattarai | Backend & AI/ML Developer</title>
-  <!-- Google Fonts for Poppins -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <title>Nikesh Bhattarai | Backend Developer | Node.js, NestJS & AI/ML</title>
+
+  <!-- SEO -->
+  <meta name="description" content="Nikesh Bhattarai is a Backend Developer specializing in scalable APIs, NestJS architecture, and AI/ML systems.">
+  <meta name="author" content="Nikesh Bhattarai">
+
+  <!-- Google Font -->
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+
   <!-- Favicon -->
   <link rel="icon" href="/img/lun.png" type="image/png" />
+  
   <!-- CSS -->
   <link rel="stylesheet" href="/css/main.css" />
   <link rel="stylesheet" href="/css/media.css" />
+
   <!-- AOS CSS -->
   <link
     rel="stylesheet"
@@ -21,7 +27,36 @@
     crossorigin="anonymous"
     referrerpolicy="no-referrer"
   />
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: var(--primary-bg-color);
+      color: var(--main-text-color);
+      line-height: 1.6;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    header {
+      position: fixed;
+      width: 100%;
+      top: 0;
+      backdrop-filter: blur(10px);
+    }
+  </style>
 </head>
+
 <body>
   <!-- HEADER -->
   <header id="header" class="header">
@@ -35,6 +70,7 @@
             <li class="nav-item"><a href="#projects" class="nav-link">Works</a></li>
             <li class="nav-item"><a href="#contact" class="nav-link">Contact</a></li>
           </ul>
+          <button id="theme-toggle" class="theme-toggle" type="button" aria-label="Toggle dark mode"></button>
           <button id="nav-btn" class="nav-btn" aria-label="Toggle navigation menu">
             <img id="nav-btn-img" src="/img/icons/open.svg" alt="Toggle navigation menu" />
           </button>
@@ -51,7 +87,7 @@
           <span class="hero-greeting">Hello, I am</span>
           <h1 class="hero-heading">Nikesh Bhattarai</h1>
           <span class="hero-heading-subtitle">Backend Developer & AI/ML Developer (learning)</span>
-          
+      
           <div class="social-links-row">
             <a href="https://github.com/nbhattara" target="_blank" rel="noopener noreferrer" aria-label="GitHub profile">
               <img src="/img/social_icons/github.svg" alt="GitHub profile of Nikesh Bhattarai" loading="lazy" />
@@ -86,55 +122,254 @@
       <div class="about-row">
         <div class="about-content" data-aos="fade-up" data-aos-duration="1000">
           <p class="about-descr">
-            Hi, I’m Nikesh Bhattarai, a passionate learner and developer currently exploring web development, graphic design, and photography.<br><br>
-            I enjoy working in digital environments and turning ideas into meaningful, inspiring creations. Outside of coding, I love discovering new places, acquiring new skills, and capturing moments through photography.<br><br>
-            Let’s collaborate and bring your vision to life!
+            Hi, I’m Nikesh Bhattarai — a Backend Developer and AI/ML enthusiast passionate about building scalable and efficient systems.<br><br>
+
+I have hands-on experience developing REST APIs, backend architectures, and database-driven applications using Node.js, NestJS, and Python. I focus on writing clean, maintainable code and designing systems that perform reliably in real-world environments.<br><br>
+
+Currently, I’m expanding my expertise in Artificial Intelligence and Machine Learning while strengthening my system design and DevOps fundamentals.<br><br>
+
+I’m actively seeking internship and full-time opportunities where I can contribute, grow, and create impactful technology solutions.
+
           </p>
           <div class="about-download-btn">
-            <a href="path/to/your-cv.pdf" download class="btn btn-white">Download CV</a>
-          </div>
-        </div>
-
-        <div class="about-skills" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="100">
-          <div class="skill">
-            <div class="skill-title">Node/NestJS</div>
-            <div class="skill-percent">95%</div>
-            <div class="skill-bar__progress"><div class="skill-bar__fill" data-progress="95"></div></div>
-          </div>
-          <div class="skill">
-            <div class="skill-title">HTML/CSS</div>
-            <div class="skill-percent">90%</div>
-            <div class="skill-bar__progress"><div class="skill-bar__fill" data-progress="90"></div></div>
-          </div>
-          <div class="skill">
-            <div class="skill-title">JavaScript</div>
-            <div class="skill-percent">65%</div>
-            <div class="skill-bar__progress"><div class="skill-bar__fill" data-progress="65"></div></div>
-          </div>
-          <div class="skill">
-            <div class="skill-title">Photoshop</div>
-            <div class="skill-percent">80%</div>
-            <div class="skill-bar__progress"><div class="skill-bar__fill" data-progress="80"></div></div>
+            <a href="\img\Nikesh-Bhattarai-cv.pdf" download class="btn btn-white">Download CV</a>
           </div>
         </div>
       </div>
 
-      <div class="services-row">
-        <div class="service-card" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="50">
-          <img class="service-card-img" src="/img/services/01.svg" alt="UI/UX Design icon" loading="lazy" />
-          <h3 class="service-card-title">UI/UX Design</h3>
-          <p>Crafting intuitive and visually appealing user interfaces that enhance experiences through thoughtful, creative designs.</p>
+      <section class="skills-premium">
+        <h2 class="skills-title">Technical Expertise</h2>
+
+        <!-- CATEGORY GRID -->
+        <div class="skills-grid">
+
+          <!-- BACKEND -->
+          <div class="skill-category">
+            <h3>Backend</h3>
+            <div class="circle-container">
+
+              <div class="circle" data-percent="95">
+                <svg>
+                  <circle cx="60" cy="60" r="50"></circle>
+                  <circle cx="60" cy="60" r="50" class="progress"></circle>
+                </svg>
+                <div class="number">95%</div>
+                <p>Node.js / NestJS</p>
+              </div>
+
+              <div class="circle" data-percent="92">
+                <svg>
+                  <circle cx="60" cy="60" r="50"></circle>
+                  <circle cx="60" cy="60" r="50" class="progress"></circle>
+                </svg>
+                <div class="number">92%</div>
+                <p>REST APIs</p>
+              </div>
+
+            </div>
+          </div>
+
+          <!-- FRONTEND -->
+          <div class="skill-category">
+            <h3>Frontend</h3>
+            <div class="circle-container">
+
+              <div class="circle" data-percent="88">
+                <svg>
+                  <circle cx="60" cy="60" r="50"></circle>
+                  <circle cx="60" cy="60" r="50" class="progress"></circle>
+                </svg>
+                <div class="number">88%</div>
+                <p>HTML / CSS</p>
+              </div>
+
+              <div class="circle" data-percent="85">
+                <svg>
+                  <circle cx="60" cy="60" r="50"></circle>
+                  <circle cx="60" cy="60" r="50" class="progress"></circle>
+                </svg>
+                <div class="number">85%</div>
+                <p>JavaScript / TS</p>
+              </div>
+
+            </div>
+          </div>
+
+          <!-- AI -->
+          <div class="skill-category">
+            <h3>AI / ML</h3>
+            <div class="circle-container">
+
+              <div class="circle" data-percent="90">
+                <svg>
+                  <circle cx="60" cy="60" r="50"></circle>
+                  <circle cx="60" cy="60" r="50" class="progress"></circle>
+                </svg>
+                <div class="number">90%</div>
+                <p>Python</p>
+              </div>
+
+              <div class="circle" data-percent="85">
+                <svg>
+                  <circle cx="60" cy="60" r="50"></circle>
+                  <circle cx="60" cy="60" r="50" class="progress"></circle>
+                </svg>
+                <div class="number">85%</div>
+                <p>TensorFlow / Sklearn</p>
+              </div>
+
+            </div>
+          </div>
+
+          <!-- DEVOPS -->
+          <div class="skill-category">
+            <h3>DevOps</h3>
+            <div class="circle-container">
+
+              <div class="circle" data-percent="80">
+                <svg>
+                  <circle cx="60" cy="60" r="50"></circle>
+                  <circle cx="60" cy="60" r="50" class="progress"></circle>
+                </svg>
+                <div class="number">80%</div>
+                <p>Docker</p>
+              </div>
+
+              <div class="circle" data-percent="82">
+                <svg>
+                  <circle cx="60" cy="60" r="50"></circle>
+                  <circle cx="60" cy="60" r="50" class="progress"></circle>
+                </svg>
+                <div class="number">82%</div>
+                <p>Vercel / VPS</p>
+              </div>
+
+            </div>
+          </div>
+
         </div>
-        <div class="service-card" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="200">
-          <img class="service-card-img" src="/img/services/02.svg" alt="Backend Development icon" loading="lazy" />
-          <h3 class="service-card-title">Backend Development</h3>
-          <p>Developing responsive, accessible, and dynamic websites using modern tools to create seamless, engaging experiences.</p>
+
+        <!-- TECH STACK BADGES -->
+        <div class="tech-badges">
+          <span>Node.js</span>
+          <span>NestJS</span>
+          <span>Python</span>
+          <span>TensorFlow</span>
+          <span>PostgreSQL</span>
+          <span>MongoDB</span>
+          <span>Docker</span>
+          </div>
+          <div class="services-row">
+            <div class="service-card" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="50">
+              <img class="service-card-img" src="/img/services/01.svg" alt="UI/UX Design icon" loading="lazy" />
+              <h3 class="service-card-title">UI/UX Design</h3>
+              <p>Crafting intuitive and visually appealing user interfaces that enhance experiences through thoughtful, creative designs.</p>
+            </div>
+            <div class="service-card" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="200">
+              <img class="service-card-img" src="/img/services/02.svg" alt="Backend Development icon" loading="lazy" />
+              <h3 class="service-card-title">Backend Development</h3>
+              <p>Developing responsive, accessible, and dynamic websites using modern tools to create seamless, engaging experiences.</p>
+            </div>
+            <div class="service-card" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="500">
+              <img class="service-card-img" src="/img/services/03.svg" alt="Content Writing icon" loading="lazy" />
+              <h3 class="service-card-title">Content Writing</h3>
+              <p>Creating compelling and audience-focused content that effectively communicates ideas and delivers meaningful value.</p>
+            </div>
+          </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- LIVE PROJECTS CAROUSEL -->
+  <section class="live-projects-section" aria-label="My Live Projects">
+    <h2 class="title">My Live Projects</h2>
+
+    <div class="carousel-container">
+      <div class="carousel-track">
+
+        <!-- Project 1 -->
+        <div class="carousel-item">
+          <a href="https://devverse-nine.vercel.app/" target="_blank" rel="noopener noreferrer" class="project-card">
+            <div class="project-preview">
+              <img src="/img/works/01.jpg" alt="DevVerse platform screenshot" loading="lazy">
+            </div>
+            <div class="project-info">
+              <h3>DevVerse</h3>
+              <p>AI-integrated platform for developers to learn and build applications</p>
+              <span class="badge live">Live</span>
+            </div>
+          </a>
         </div>
-        <div class="service-card" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="500">
-          <img class="service-card-img" src="/img/services/03.svg" alt="Content Writing icon" loading="lazy" />
-          <h3 class="service-card-title">Content Writing</h3>
-          <p>Creating compelling and audience-focused content that effectively communicates ideas and delivers meaningful value.</p>
+
+        <!-- Project 2 -->
+        <div class="carousel-item">
+          <a href="https://nikesh-bhattarai.com.np" target="_blank" rel="noopener noreferrer" class="project-card">
+            <div class="project-preview">
+              <img src="/img/works/05.jpg" alt="Personal Portfolio screenshot" loading="lazy">
+            </div>
+            <div class="project-info">
+              <h3>Portfolio</h3>
+              <p>My personal developer portfolio website</p>
+              <span class="badge live">Live</span>
+            </div>
+          </a>
         </div>
+
+        <!-- Project 3 -->
+        <div class="carousel-item">
+          <a href="https://raktadan.vercel.app/" target="_blank" rel="noopener noreferrer" class="project-card">
+            <div class="project-preview">
+              <img src="/img/works/03.jpg" alt="Raktadan blood donation platform screenshot" loading="lazy">
+            </div>
+            <div class="project-info">
+              <h3>Raktadan</h3>
+              <p>Blood donation & management system (Launching soon in Nepal)</p>
+              <span class="badge soon">Coming Soon</span>
+            </div>
+          </a>
+        </div>
+
+        <!-- Project 4 -->
+        <div class="carousel-item">
+          <a href="https://sun-smoky.vercel.app/" target="_blank" rel="noopener noreferrer" class="project-card">
+            <div class="project-preview">
+              <img src="/img/works/06.jpg" alt="Gold & Silver Calculator screenshot" loading="lazy">
+            </div>
+            <div class="project-info">
+              <h3>Gold & Silver Calculator</h3>
+              <p>Precious metals calculator with currency converter</p>
+              <span class="badge live">Live</span>
+            </div>
+          </a>
+        </div>
+
+        <!-- Optional: duplicate first few items for seamless infinite loop effect -->
+        <div class="carousel-item">
+          <a href="https://devverse-nine.vercel.app/" target="_blank" rel="noopener noreferrer" class="project-card">
+            <div class="project-preview">
+              <img src="/img/works/01.jpg" alt="DevVerse platform screenshot" loading="lazy">
+            </div>
+            <div class="project-info">
+              <h3>DevVerse</h3>
+              <p>AI-integrated platform for developers to learn and build applications</p>
+              <span class="badge live">Live</span>
+            </div>
+          </a>
+        </div>
+
+        <div class="carousel-item">
+          <a href="https://nikesh-bhattarai.com.np" target="_blank" rel="noopener noreferrer" class="project-card">
+            <div class="project-preview">
+              <img src="/img/works/05.jpg" alt="Personal Portfolio screenshot" loading="lazy">
+            </div>
+            <div class="project-info">
+              <h3>Portfolio</h3>
+              <p>My personal developer portfolio website</p>
+              <span class="badge live">Live</span>
+            </div>
+          </a>
+        </div>
+
       </div>
     </div>
   </section>
@@ -149,8 +384,8 @@
             <img class="project-img" src="/img/works/01.jpg" alt="Finance Dashboard – UI/UX design project screenshot" loading="lazy" />
             <div class="project-mask">
               <div class="project-caption">
-                <h5 class="white">Finance Dashboard</h5>
-                <p class="white">UI/UX Design</p>
+                <h5 class="white">DevVerse</h5>
+                <p class="white">DevVerse is an AI integrated platform for developers to learn and build applications</p>
               </div>
             </div>
           </a>
@@ -160,8 +395,8 @@
             <img class="project-img" src="/img/works/02.jpg" alt="Product Design – UI/UX project screenshot" loading="lazy" />
             <div class="project-mask">
               <div class="project-caption">
-                <h5 class="white">Product Design</h5>
-                <p class="white">UI/UX Design</p>
+                <h5 class="white">DevVerse IDE</h5>
+                <p class="white">DevVerse IDE is an AI integrated platform for developers to learn and build applications with inbuilt compilers for javascript ,html ,css ,python etc</p>
               </div>
             </div>
           </a>
@@ -171,8 +406,8 @@
             <img class="project-img" src="/img/works/03.jpg" alt="Landing Page – UI/UX and web development project screenshot" loading="lazy" />
             <div class="project-mask">
               <div class="project-caption">
-                <h5 class="white">Landing Page</h5>
-                <p class="white">UI/UX Design, Web Development</p>
+                <h5 class="white">Raktadan</h5>
+                <p class="white">blood donation and management platform launching soon in nepal </p>
               </div>
             </div>
           </a>
@@ -182,19 +417,8 @@
             <img class="project-img" src="/img/works/04.jpg" alt="Personal Portfolio website screenshot" loading="lazy" />
             <div class="project-mask">
               <div class="project-caption">
-                <h5 class="white">Portfolio</h5>
-                <p class="white">Web Development</p>
-              </div>
-            </div>
-          </a>
-        </div>
-        <div class="project-box" data-aos="fade-zoom-in" data-aos-delay="800" data-aos-duration="1000">
-          <a href="#!" aria-label="View Cosmic Sea project">
-            <img class="project-img" src="/img/works/05.jpg" alt="Cosmic Sea – creative UI/UX and development project screenshot" loading="lazy" />
-            <div class="project-mask">
-              <div class="project-caption">
-                <h5 class="white">Cosmic Sea</h5>
-                <p class="white">UI/UX Design, Web Development</p>
+                <h5 class="white">Gold & Silver Calculator</h5>
+                <p class="white">gold and silver calculator with inbuilt currency converter</p>
               </div>
             </div>
           </a>
@@ -204,8 +428,19 @@
             <img class="project-img" src="/img/works/06.jpg" alt="eCommerce website screenshot" loading="lazy" />
             <div class="project-mask">
               <div class="project-caption">
-                <h5 class="white">eCommerce</h5>
-                <p class="white">Web Development</p>
+                <h5 class="white">Measurement units</h5>
+                <p class="white">measurement units converter of gold and silver in nepali measurement units</p>
+              </div>
+            </div>
+          </a>
+        </div>
+        <div class="project-box" data-aos="fade-zoom-in" data-aos-delay="200" data-aos-duration="1000">
+          <a href="#!" aria-label="View Product Design project">
+            <img class="project-img" src="/img/works/05.jpg" alt="Product Design – UI/UX project screenshot" loading="lazy" />
+            <div class="project-mask">
+              <div class="project-caption">
+                <h5 class="white">Portfolio</h5>
+                <p class="white">my personal developer portfolio website </p>
               </div>
             </div>
           </a>
@@ -223,13 +458,13 @@
         <div class="input-box">
           <label for="name">Name</label>
           <input type="text" id="name" name="name" placeholder="Name" required />
-          
+      
           <label for="email">Email Address</label>
           <input type="email" id="email" name="email" placeholder="Email Address" required />
         </div>
         <label for="message">Your Message</label>
         <textarea id="message" name="message" cols="30" rows="10" placeholder="Your Message" required></textarea>
-        
+  
         <div class="contact-button" data-aos="fade-zoom-in" data-aos-easing="ease-in-out" data-aos-delay="500" data-aos-duration="1000">
           <button class="btn btn-red" type="submit">Send Message</button>
         </div>
@@ -255,7 +490,7 @@
           <img src="/img/social_icons/instagram.svg" alt="Instagram profile" loading="lazy" />
         </a>
       </div>
-      <p>© Copyright Nikesh Bhattarai</p>
+      <p>Copyright Nikesh Bhattarai</p>
     </div>
   </footer>
 
